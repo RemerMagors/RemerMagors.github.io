@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <title>
+      
+        C语言初识之猜数游戏 | Pixel's Blog
+      
+    </title>
+    <meta name="description" content="Look forward my friend!" />
+    <meta name="keywords" content="" />
+    
+      <link rel="apple-touch-icon"
+            sizes="180x180"
+            href="/images/apple-touch-icon.jpg" />
+    
+    
+      <link rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/images/favicon-32x32.png" />
+    
+    
+      <link rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/images/favicon-16x16.png" />
+    
+    
+      <link rel="mask-icon"
+            href="/images/logo.svg"
+            color="" />
+    
+    
+    
+      
+  <style>
+    @font-face {
+        font-family:sourceHanSerif;
+        src: url(/font/normal.ttf);
+        font-weight: normal;
+    }
+  </style>
+
+  <style>
+    @font-face {
+        font-family:sourceHanSerif;
+        src: url(/font/bold.ttf);
+        font-weight: bold;
+    }
+  </style>
+
+
+    
+    <link rel="stylesheet"
+          type="text/css"
+          href='/css/layout.css' />
+    
+    <script src="https://kit.fontawesome.com/c4ba0a82e6.js" crossorigin="anonymous"></script>
+    
+  <link rel="stylesheet" type="text/css" href="/css/post.css"/>
+  
+
+  <meta name="generator" content="Hexo 8.0.0"></head>
+  <body>
+    
+      <div id="search-mask" style="display:none">
+  <div class="search-main" id="search-main">
+    <div class="search__head">
+      <div class="search-form">
+        <svg t="1706347533072"
+             class="icon"
+             viewBox="0 0 1024 1024"
+             version="1.1"
+             xmlns="http://www.w3.org/2000/svg"
+             p-id="7828"
+             width="20"
+             height="20">
+          <path d="M685.6 660.336l155.152 155.168a16 16 0 0 1 0 22.624l-11.312 11.328a16 16 0 0 1-22.624 0l-158.528-158.544a289.792 289.792 0 0 1-165.152 51.36C322.336 742.256 192 611.904 192 451.12 192 290.336 322.336 160 483.136 160c160.784 0 291.12 130.336 291.12 291.136 0 82.112-33.984 156.272-88.672 209.2z m-202.464 33.92c134.272 0 243.12-108.848 243.12-243.12C726.256 316.848 617.408 208 483.136 208 348.848 208 240 316.848 240 451.136c0 134.272 108.848 243.12 243.136 243.12z" fill="#000000" p-id="7829">
+          </path>
+        </svg>
+        <input id="search-input" placeholder="搜索文章">
+        <svg t="1706361500528"
+             id="search-clear"
+             class="icon"
+             viewBox="0 0 1024 1024"
+             version="1.1"
+             xmlns="http://www.w3.org/2000/svg"
+             p-id="4351"
+             width="20"
+             height="20">
+          <path d="M512 562.688l-264.2944 264.2944-50.688-50.688L461.312 512 197.0176 247.7056l50.688-50.688L512 461.312l264.2944-264.2944 50.688 50.688L562.688 512l264.2944 264.2944-50.688 50.688L512 562.688z" fill="#00" p-id="4352">
+          </path>
+        </svg>
+      </div>
+    </div>
+    <div class="search__body" id="search-result"></div>
+    <div class="search__foot"></div>
+  </div>
+</div>
+
+    
+    <div class="head">
+      <div class="nav">
+        <a href='/' class="nav-logo">
+          <img alt="logo" height="60px" width="60px" src="/images/logo.svg" />
+        </a>
+        <input id="navBtn" type="checkbox" />
+        <div class="nav-right">
+          
+            <div class="search-outer"><div class="search" id="search-btn">
+  <svg t="1706347533072"
+       class="icon"
+       viewBox="0 0 1024 1024"
+       version="1.1"
+       xmlns="http://www.w3.org/2000/svg"
+       p-id="7828"
+       width="20"
+       height="20">
+    <path d="M685.6 660.336l155.152 155.168a16 16 0 0 1 0 22.624l-11.312 11.328a16 16 0 0 1-22.624 0l-158.528-158.544a289.792 289.792 0 0 1-165.152 51.36C322.336 742.256 192 611.904 192 451.12 192 290.336 322.336 160 483.136 160c160.784 0 291.12 130.336 291.12 291.136 0 82.112-33.984 156.272-88.672 209.2z m-202.464 33.92c134.272 0 243.12-108.848 243.12-243.12C726.256 316.848 617.408 208 483.136 208 348.848 208 240 316.848 240 451.136c0 134.272 108.848 243.12 243.136 243.12z" fill="#000000" p-id="7829">
+    </path>
+  </svg>
+  <span>搜索</span>
+  <span class="search-shortcut-key">Ctrl K</span>
+</div>
+</div>
+          
+          <div class="nav-menu">
+            
+              
+                <a class="nav-menu-item" href="/paper">文章</a>
+              
+                <a class="nav-menu-item" href="/life">生活琐记</a>
+              
+                <a class="nav-menu-item" href="/note">学习笔记</a>
+              
+            
+            
+          </div>
+        </div>
+        <label class="nav-btn" for="navBtn"></label>
+      </div>
+    </div>
+    <div class="body">
+      
+  <article class="post-content">
+    <div class="post-inner">
+      <div class="post-content__head">
+        <div class="post-title">C语言初识之猜数游戏</div>
+        <div class="post-info">
+          
+  
+
+
+          <span class="post-date">2025-10-03</span>
+        </div>
+      </div>
+      
+      <div class="post-content__body">
+        
+          <div class="post-gallery">
+            
+          </div>
+        
+        <p>转入自动化专业之后以后的学习会用到C语言，本来自动化专业大一就学过**《C语言程序设计了》**，所以我需要对这一门课程进行补修。刚好我也对这方面感兴趣，顺便提前学习了一点点，现在我自学的基本都是看菜鸟教程和一点点实践出来的。突发奇想写个猜数字的游戏，很简陋，只有命令行界面。下面是我写的整个代码</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;time.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">int</span> r = <span class="hljs-number">2</span>;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\tGuess NUMBER game\t\n\n\t    [1]Start\t\n\n\t    [2]EXIT\t\n&quot;</span>);<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;r);<br>    <span class="hljs-keyword">while</span>( r &lt;= <span class="hljs-number">1</span> ) <span class="hljs-comment">// 开始游戏</span><br>    &#123;<br>        srand((<span class="hljs-type">unsigned</span> <span class="hljs-type">int</span>)time(<span class="hljs-literal">NULL</span>));<br>        <span class="hljs-type">int</span> answer = rand() % <span class="hljs-number">101</span> + <span class="hljs-number">1</span>; <span class="hljs-comment">// 从1-100随机选取一个数字</span><br>        <span class="hljs-type">int</span> x = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> n = <span class="hljs-number">1</span>; <span class="hljs-comment">// 用于记录尝试次数的变量</span><br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\tGuess a NUMBER from 1 to 100\t\n\nI&#x27;ll tell you whether IT is bigger or smaller\nin comparison with the NUMBER i selected\n\n&quot;</span>);<br>        <span class="hljs-built_in">printf</span> (<span class="hljs-string">&quot;Enter Your ANSWER: &quot;</span>);<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;x);<br>        <span class="hljs-keyword">while</span>(x != answer) <span class="hljs-comment">// 猜错开始循环</span><br>        &#123;<br>            <span class="hljs-keyword">if</span>(x &lt; answer) <span class="hljs-comment">// 输入小于答案</span><br>            &#123;<br>                <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Your answer is Smaller\n&quot;</span>);<br>            &#125;<br>            <span class="hljs-keyword">else</span> <span class="hljs-comment">// 输入大于答案</span><br>            &#123;<br>                <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Your answer is Bigger\n&quot;</span>);<br>            &#125;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Try again: &quot;</span>);<br>            n++;<br>            <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;x);<br>        &#125;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;You&#x27;ve tried %d times, the Answer is %d\n&quot;</span>, n, answer);<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;[1] PLAY AGAIN\n[2] EXIT.....\n&quot;</span>);<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;r);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>大致的流程图在这里，虽然说是基本没有什么难度，但是能用代码实现自己的想法真的挺有成就感。</p>
+<pre><code class="hljs mermaid">---
+config:
+  theme: neutral
+  layout: dagre
+
+---
+flowchart TD
+    A[&quot;猜数游戏&quot;] --&gt;|输入1| C(&quot;随机生成答案&quot;)
+    A --&gt;|输入2| D(&quot;结束游戏&quot;)
+    C --&gt; E(&quot;猜数&quot;)
+    E --&gt;|猜对| F(&quot;尝试次数，正确答案&quot;)
+    E --&gt;|猜错| G(&quot;告知与答案大小关系&quot;)
+    G --&gt;|记录尝试次数| E
+    F --&gt; A
+    R(告知规则) --&gt; A</code></pre>
+
+<p>现在对<strong>储存类</strong>和<strong>数据类型</strong>还是存在一些疑惑，马上就要看到<strong>指针</strong>和<strong>数组</strong>了，还有一个<strong>枚举（enum）</strong>，<strong>作用域规则</strong>算是理解了。</p>
+<p>在**《《软件技术基础》》<strong>这门刚开始学的课程中老师讲的算法的</strong>时间复杂度**，讲了<strong>大O表示法（Big O Notation）</strong>，举了一些例子</p>
+<ul>
+<li><strong>O(1) 常数时间</strong></li>
+<li><strong>O(log n) 对数时间</strong></li>
+<li><strong>O(n) 线性时间</strong></li>
+<li><strong>O(n log n) 线性对数时间</strong></li>
+<li><strong>O(n^2) 平方时间</strong></li>
+<li><strong>O(2^n) 指数时间</strong></li>
+<li><strong>O(n!) 阶乘时间</strong><br>现在我还是不会算一些循环的时间复杂度</li>
+</ul>
+
+      </div>
+    </div>
+    
+      <script src='https://unpkg.com/mermaid@latest/dist/mermaid.min.js'></script>
+      <script>
+        if (window.mermaid) {
+          mermaid.initialize({"startOnload":true});
+        }
+      </script>
+    
+  </article>
+  <div class="post__foot">
+    
+    <div class="post-nav">
+  
+    <a class="post-nav-item-left" href="/archives/16107/">
+      <div class="text-align">
+        <svg t="1670570876164"
+             class="icon"
+             viewBox="0 0 1024 1024"
+             width="16"
+             height="16">
+          <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596" />
+        </svg>
+        <span class="text-small">上一篇</span>
+      </div>
+      <div>Hello World</div>
+    </a>
+  
+  <div class="vhr"></div>
+  
+    <a class="post-nav-item-right" href="/archives/15058/">
+      <div class="text-align">
+        <span class="text-small">下一篇</span>
+        <svg t="1670570876164"
+             class="icon"
+             viewBox="0 0 1024 1024"
+             transform="scale(-1,-1)"
+             width="16"
+             height="16">
+          <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596" />
+        </svg>
+      </div>
+      金工实习
+    </a>
+  
+</div>
+
+    
+    
+  </div>
+
+    </div>
+    <div class="foot">
+      <div class="foot-inner">
+        <div class="foot__head">
+          
+            <div class="foot-line">
+              <div class="matts">片</div><div class="matts">云</div><div class="matts">天</div><div class="matts">共</div><div class="matts">远</div>
+            </div>
+          
+            <div class="foot-line">
+              <div class="matts">永</div><div class="matts">夜</div><div class="matts">月</div><div class="matts">同</div><div class="matts">孤</div>
+            </div>
+          
+        </div>
+        <div class="foot__body">
+          
+            <div class="foot-item">
+              <div class="foot-item__head">朋友</div>
+              <div class="foot-item__body">
+                
+                  <div class="text">
+                    <img alt="link" height="20px" width="20px" src="/images/icon/icon-link.svg" />
+                    <a class="foot-link" target="_blank" rel="noopener" href="https://github.com/hooozen/hexo-theme-tranquility">Theme Tranquility</a>
+                  </div>
+                
+                <div class="text">
+                  <img alt="link" height="20px" width="20px" src="/images/icon/icon-link+.svg" />
+                  <a class="foot-link"
+                     href="mailto:wzf050401@outlook.com?subject=%E7%94%B3%E8%AF%B7%20Hozen.site%20%E7%9A%84%E5%8F%8B%E9%93%BE%E4%BD%8D%E7%BD%AE">
+                  申请友链</a>
+                </div>
+              </div>
+            </div>
+          
+          
+            <div class="foot-item">
+              <div class="foot-item__head">账号</div>
+              <div class="foot-item__body">
+                
+                  <div class="text">
+                    <img alt="link" height="20px" width="20px" src="/images/logo-steam.svg" />
+                    <a class="foot-link" target="_blank" rel="noopener" href="https://steamcommunity.com/id/BD6KFZ/">Steam</a>
+                  </div>
+                
+              </div>
+            </div>
+          
+          <div class="foot-item">
+            <div class="foot-item__head">联系</div>
+            <div class="foot-item__body">
+              <div class="text">
+                <img alt="link" height="20px" width="20px" src="/images/icon/icon-email.svg" />
+                <a class="foot-link" href="mailto:wzf050401@outlook.com">wzf050401@outlook.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <a href="http://example.com">Pixel's Blog</a> &nbsp;|&nbsp;由&nbsp;<a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>&nbsp;及&nbsp;
+          <svg width="20" height="20" viewBox="0 0 725 725">
+            <path fill-rule="evenodd" fill="rgb(221, 221, 221)" d="M145.870,236.632 L396.955,103.578 L431.292,419.44 L156.600,522.53 L145.870,236.632 Z" />
+            <path fill-rule="evenodd" fill="rgb(159, 159, 159)" d="M396.955,103.578 L564.345,234.486 L611.558,513.469 L431.292,419.44 L396.955,103.578 Z" />
+            <path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M431.292,419.44 L611.558,513.469 L358.327,595.18 L156.600,522.53 L431.292,419.44 Z" />
+          </svg>
+          <a target="_blank" rel="noopener" href="https://github.com/hooozen/hexo-theme-tranquility">致远</a>&nbsp;驱动
+        </div>
+      </div>
+    </div>
+    
+    
+      <script src="/js/search.js"></script>
+      <script>searchInitialize("/search.json")</script>
+    
+    
+      <script src="/js/copy-code.js"></script>
+    
+    
+  
+
+  </body>
+</html>
