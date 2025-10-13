@@ -168,11 +168,13 @@
 <p><code>-Wall</code>
 在编译时对一些常见错误，潜在问题给出警告，方便发现问题，修正代码</p>
 <p><code>-o</code> <strong>output</strong> 指定编译生成的文件名</p>
-<p><code>-v</code> 列出一些详细信息，当编译出错时会非常有用 -
-搜寻<strong>头文件（header files）</strong> 和
-<strong>库文件（libraries）</strong>的目录 -
-用于链接的<strong>目标文件（object
-files）</strong>和<strong>库文件（libraries）</strong></p>
+<p><code>-v</code> 列出一些详细信息，当编译出错时会非常有用</p>
+<ul>
+<li>搜寻<strong>头文件（header files）</strong> 和
+<strong>库文件（libraries）</strong>的目录</li>
+<li>用于链接的<strong>目标文件（object
+files）</strong>和<strong>库文件（libraries）</strong></li>
+</ul>
 <h3 id="多个文件编译">多个文件编译</h3>
 <p><strong>独立编译</strong> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc -Wall -c xxx.c<br></code></pre></td></tr></table></figure> <strong>链接</strong>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc xxx.o yyyy.o -o Name<br></code></pre></td></tr></table></figure> <code>-c</code>产生相应的目标文件，与源文件同名</p>
