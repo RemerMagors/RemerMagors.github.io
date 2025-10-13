@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <title>
       
-        十月周末总结 | Pixel's Blog
+        GCC基本使用 | Pixel's Blog
       
     </title>
     <meta name="description" content="Look forward my friend!" />
@@ -147,13 +147,13 @@
   <article class="post-content">
     <div class="post-inner">
       <div class="post-content__head">
-        <div class="post-title">十月周末总结</div>
+        <div class="post-title">GCC基本使用</div>
         <div class="post-info">
           
   
 
 
-          <span class="post-date">2025-10-12</span>
+          <span class="post-date">2025-10-13</span>
         </div>
       </div>
       
@@ -163,51 +163,31 @@
             
           </div>
         
-        <h2 id="第一次周末总结">第一次周末总结</h2>
-<h3 id="月6---10月12">10月6 - 10月12</h3>
-<p>6号是中秋节，10月1 —
-10月8是国庆和中秋假期，整个国庆假期都在学校，每天打打CS2。国庆假期升级了电脑的内存，换了两根24G
-DDR5
-5600MHz的内存条，原来的是两根8G实在是有点不够用。SW开个模型就要报内存可使用内存不够用。刚开始还计划假期几天出去玩玩，比如去龙潭山，朱雀山看看吉林的秋景。最后这八天都没有出去走一走。</p>
-<p>中秋节晚上和舍友邓一块去了河南街的福源馆，买了几个月饼，说实话这个月饼中规中矩，吃起来没有什么特别的，就是一种很熟悉的味道，但是挺贵的，最便宜的六块五一个。我买了两个六块五的，一个八块的，到宿舍给了舍友一个。从9号开始上课到12号，周六补了10月八号的课。</p>
-<h3 id="学习方面">学习方面</h3>
-<h4 id="物理">物理</h4>
-<p>假期补了前面的一点作业，是关于光的偏振的，自然光光强<span
-class="math inline">\(I_0\)</span>透过偏振片后光强变为原来的一半<span
-class="math inline">\(I_1=I_0/2\)</span>，产生的线偏振光与的振动方向与另一个偏振片的偏振化方向夹角<span
-class="math inline">\(\alpha\)</span>，则透射光的光强<span
-class="math inline">\(I = I_1\cos^2\alpha\)</span>
-上面这个就是<strong>（马吕斯定律）</strong>
-证明：是将入射光的光矢量振幅<span class="math inline">\(E_0\)</span>分成
-<strong>垂直</strong> 和 <strong>平行</strong> 于偏振片偏振化方向的分量
-<span class="math inline">\(E_0\sin\alpha\)</span> 和 <span
-class="math inline">\(E_0\cos\alpha\)</span>
-，光强与振幅的二次方成正比，<span
-class="math inline">\(\begin{gather*}\frac{I}{I_1}=\frac{(E_0\cos\alpha)^2}{E_0^2}\end{gather*}\)</span></p>
-<p>上课新学习了电场强度通量，和高斯定理。电场强度通量在书中是这么说的：
-<strong>通过电场中任一给定面积的电场线根数，称为通过该面积的电场强度通量,用<span
-class="math inline">\(\Phi_e\)</span>表示</strong>。感觉这是一种很好理解
-<strong>高斯定理</strong> 的方式。 <strong>高斯定理</strong> 的表述：
-<strong>穿过任意闭合曲面的电场强度通量，等于曲面内所包围的全部电荷的电荷量的代数和除以<span
-class="math inline">\(\varepsilon_0\)</span></strong>。</p>
-<p><span class="math inline">\(\begin{gather*}
-\Phi_e=\oint_S E\cdot
-\,d\mathrm{S}=\frac{1}{\varepsilon_0}\sum_{i=1}^{n} q_i
-\end{gather*}\)</span></p>
-<p>然后又学了电势差，电势，上课算了一些常见的物理模型：（下次补充）</p>
-<h4 id="单片机">51单片机</h4>
-<ul class="task-list">
-<li><label><input type="checkbox"
-checked="" />点亮一颗LED，LED流水灯，独立按键控制LED状态，独立按键控制LED移位</label></li>
-<li><label><input type="checkbox"
-checked="" />数码管静态显示，动态显示</label></li>
-</ul>
-<p>在控制LED的编程过程中用到的较多的是 - 2进制和16进制转换 - 按位取反 -
-延时</p>
-<p>数码管操作起来比LED复杂许多，掌握74HC138译码器使用实现数码管的位选，74HC245控制段选，对于动态显示要消影。</p>
-<h4 id="电路原理">电路原理</h4>
-<h4 id="最优化理论">最优化理论</h4>
-<h4 id="体育课3200m">体育课3200M</h4>
+        <h3 id="单个文件编译">单个文件编译</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc -v -Wall xxx.c -o xxx<br></code></pre></td></tr></table></figure>
+<p><code>-Wall</code>
+在编译时对一些常见错误，潜在问题给出警告，方便发现问题，修正代码
+<code>-o</code> <strong>output</strong> 指定编译生成的文件名
+<code>-v</code> 列出一些详细信息，当编译出错时会非常有用 -
+搜寻<strong>头文件（header files）</strong> 和
+<strong>库文件（libraries）</strong>的目录 -
+用于链接的<strong>目标文件（object
+files）</strong>和<strong>库文件（libraries）</strong></p>
+<h3 id="多个文件编译">多个文件编译</h3>
+<p><strong>独立编译</strong> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc -Wall -c xxx.c<br></code></pre></td></tr></table></figure> <strong>链接</strong>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc xxx.o yyyy.o -o Name<br></code></pre></td></tr></table></figure> <code>-c</code>产生相应的目标文件，与源文件同名</p>
+<p>对于较大的工程，将所有源码写在一个源文件中每次修改重新编译很费时。
+这时候需要将源文件模块化编程，每次只需要重新编译修改过的部分.</p>
+<h4 id="第一阶段">第一阶段</h4>
+<p>每个文件编译后生成一个 <strong>目标文件（object file）</strong>
+，而不产生可运行文件，产生对应的<code>.O</code>或者<code>.obj</code>文件,</p>
+<h4 id="第二阶段">第二阶段</h4>
+<p>所有的目标文件通过连接器(linker)链接在一起，产生一个独立的可运行文件。</p>
+<h5 id="链接顺序">链接顺序</h5>
+<p>gcc无需指定链接顺序，对较老的编译器，有可能需要指定顺序，调用函数者放在前，定义函数者放在后。</p>
+<h5 id="重编译重链接">重编译重链接</h5>
+<p>对发生改变的源文件重新编译，再重新链接</p>
+<h3 id="链接外部库">链接外部库</h3>
 
       </div>
     </div>
@@ -224,23 +204,11 @@ checked="" />数码管静态显示，动态显示</label></li>
     
     <div class="post-nav">
   
-    <a class="post-nav-item-left" href="/archives/21724/">
-      <div class="text-align">
-        <svg t="1670570876164"
-             class="icon"
-             viewBox="0 0 1024 1024"
-             width="16"
-             height="16">
-          <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596" />
-        </svg>
-        <span class="text-small">上一篇</span>
-      </div>
-      <div>GCC基本使用</div>
-    </a>
+    <div class="post-nav-item-left"></div>
   
   <div class="vhr"></div>
   
-    <a class="post-nav-item-right" href="/archives/10000/">
+    <a class="post-nav-item-right" href="/archives/19160/">
       <div class="text-align">
         <span class="text-small">下一篇</span>
         <svg t="1670570876164"
@@ -252,7 +220,7 @@ checked="" />数码管静态显示，动态显示</label></li>
           <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596" />
         </svg>
       </div>
-      Latextest
+      十月周末总结
     </a>
   
 </div>
