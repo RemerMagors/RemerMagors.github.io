@@ -163,33 +163,76 @@
             
           </div>
         
-        <h3 id="单个文件编译">单个文件编译</h3>
+        <h1 id="单个文件编译">单个文件编译</h1>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc -v -Wall xxx.c -o xxx<br></code></pre></td></tr></table></figure>
-<p><code>-Wall</code>
-在编译时对一些常见错误，潜在问题给出警告，方便发现问题，修正代码</p>
-<p><code>-o</code> <strong>output</strong> 指定编译生成的文件名</p>
-<p><code>-v</code> 列出一些详细信息，当编译出错时会非常有用</p>
+<ul>
+<li><code>-Wall</code>
+在编译时对一些常见错误，潜在问题给出警告，方便发现问题，修正代码</li>
+<li><code>-o</code> <strong>output</strong> 指定编译生成的文件名
+<ul>
+<li>可以顺便指定目录</li>
+</ul></li>
+<li><code>-v</code> 列出一些详细信息，当编译出错时会非常有用
 <ul>
 <li>搜寻<strong>头文件（header files）</strong> 和
 <strong>库文件（libraries）</strong>的目录</li>
 <li>用于链接的<strong>目标文件（object
 files）</strong>和<strong>库文件（libraries）</strong></li>
+</ul></li>
 </ul>
-<h3 id="多个文件编译">多个文件编译</h3>
-<p><strong>独立编译</strong> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc -Wall -c xxx.c<br></code></pre></td></tr></table></figure> <strong>链接</strong>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc xxx.o yyyy.o -o Name<br></code></pre></td></tr></table></figure> <code>-c</code>产生相应的目标文件，与源文件同名</p>
+<h1 id="多个文件编译">多个文件编译</h1>
+<p><strong>独立编译</strong> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc -Wall -c xxx.c<br></code></pre></td></tr></table></figure>
+<code>-c</code>产生相应的目标文件，这一步同样可以用<code>-o</code>参数指定文件名，否则与源文件同名</p>
+<p><strong>链接</strong> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc xxx.o yyyy.o -o Name<br></code></pre></td></tr></table></figure></p>
 <p>对于较大的工程，将所有源码写在一个源文件中每次修改重新编译很费时。
 这时候需要将源文件模块化编程，每次只需要重新编译修改过的部分.</p>
-<h4 id="第一阶段">第一阶段</h4>
+<h2 id="第一阶段">第一阶段</h2>
 <p>每个文件编译后生成一个 <strong>目标文件（object file）</strong>
 ，而不产生可运行文件，产生对应的<code>.O</code>或者<code>.obj</code>文件,</p>
-<h4 id="第二阶段">第二阶段</h4>
+<h2 id="第二阶段">第二阶段</h2>
 <p>所有的目标文件通过连接器(linker)链接在一起，产生一个独立的可运行文件。</p>
-<h5 id="链接顺序">链接顺序</h5>
+<h3 id="链接顺序">链接顺序</h3>
 <p>gcc无需指定链接顺序，对较老的编译器，有可能需要指定顺序，调用函数者放在前，定义函数者放在后。</p>
-<h5 id="重编译重链接">重编译重链接</h5>
+<h2 id="重编译重链接">重编译重链接</h2>
 <p>对发生改变的源文件重新编译，再重新链接</p>
-<h3 id="链接外部库">链接外部库</h3>
+<h1 id="链接外部库">链接外部库</h1>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc -Wall main.c /usr/lib/libm.a -o xxx<br></code></pre></td></tr></table></figure>
+<p>绝对路径链接目标库<code>libm.a</code> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc -Wall main.c -lNAME -o xxx<br>gcc -Wall main.c /usr/lib/libm.a -o xxx //等于下面这个<br>gcc -Wall main.c -lm io xxx<br></code></pre></td></tr></table></figure>
+对于库文件<code>libNAME.a</code>,可以用<code>-lNAME</code>链接</p>
+<h2 id="搜索路径">搜索路径</h2>
+<p><code>-I</code>和<code>-L</code>参数指定搜索路经</p>
+<ul>
+<li><code>-I</code>指定头文件搜索目录</li>
+<li><code>-L</code>指定库文件搜索目录</li>
+</ul>
+<h1 id="使用ar创建一个库">使用<code>ar</code>创建一个库</h1>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ar cr libNAME.a file1.o file2.o ... filen.o<br></code></pre></td></tr></table></figure>
+<p><code>cr</code></p>
+<ul>
+<li><code>c</code> create 创建</li>
+<li><code>r</code> replace 替换</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ar t libNAME.a<br></code></pre></td></tr></table></figure>
+<p>列出<code>libNAME.a</code>里的目标文件</p>
+<h2
+id="创建一个库libtest.a并使用">创建一个库<code>libTEST.a</code>并使用</h2>
+<h3 id="创建头文件和源码">1.创建头文件和源码</h3>
+<p><code>libTEST.h</code>,<code>func1.c</code>,<code>func2.c</code>,<code>main.c</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c:func1.c">#include &quot;libTEST.h&quot;<br>int func1(int x, int y)&#123;<br>    return (x+y);<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c:func2.c">#include &lt;stdio.h&gt;<br>void func2(int x)&#123;<br>    printf(&quot;Result = %d&quot;, x);<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c:libTEST.h">#ifndef __LIBTEST_H__<br>#define __LIBTEST_H__ <br><br>int func1(int x, int y);<br>void func2(int x);<br><br>#endif <br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c:main.c">#include &quot;libTEST.h&quot;<br>int main()&#123;<br>    int i;<br>    i = func1(1, 2);<br>    func2(i);<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="创建目标文件">2.创建目标文件</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc -Wall -c func1.c func2.c<br></code></pre></td></tr></table></figure>
+<p>此时产生目标文件<code>func1.o</code>,<code>func2.o</code></p>
+<h3 id="将目标文件创建成库">3.将目标文件创建成库</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ar cr libTEST.a func1.o func2.o<br></code></pre></td></tr></table></figure>
+<p>生成了库文件<code>libTEST.a</code></p>
+<h3 id="使用库文件">4.使用库文件</h3>
+<p>在编译时链接刚刚创建的库<code>libTEST.a</code>，要将<code>main.c</code>放在<code>libTEST.a</code>之前</p>
+<p>!⭕!库文件<code>.a</code>为二进制文件。<code>main.c</code>调用<code>libTEST.a</code>，放在前面。
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc -Wall main.c libTEST.a<br></code></pre></td></tr></table></figure> OR 添加搜索库路径参数 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc -Wall main.c -L. -lTEST<br></code></pre></td></tr></table></figure>
+运行输出文件，程序结果为<code>3</code></p>
 
       </div>
     </div>
