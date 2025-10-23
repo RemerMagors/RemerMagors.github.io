@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <title>
       
-        Optimization | Pixel's Blog
+        数电 | Pixel's Blog
       
     </title>
     <meta name="description" content="Look forward my friend!" />
@@ -147,19 +147,19 @@
   <article class="post-content">
     <div class="post-inner--toc">
       <div class="post-content__head">
-        <div class="post-title">Optimization</div>
+        <div class="post-title">数电</div>
         <div class="post-info">
           
   
 
 
-          <span class="post-date">2025-10-15</span>
+          <span class="post-date">2025-10-23</span>
         </div>
       </div>
       
         <aside class="toc-outer">
           <div class="toc-title">目录</div>
-          <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%9C%80%E4%BC%98%E5%8C%96%E7%90%86%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="post-toc-text">最优化理论学习笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%80%E6%AD%A3%E5%AE%9A%E7%9F%A9%E9%98%B5positive-matrix"><span class="post-toc-text">一、正定矩阵(Positive Matrix)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E7%9F%A9%E9%98%B5%E6%98%AF%E5%90%A6%E4%B8%BA%E6%AD%A3%E5%AE%9A%E7%9F%A9%E9%98%B5"><span class="post-toc-text">判断一个矩阵是否为正定矩阵</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%8C%E6%B5%B7%E5%A1%9E%E7%9F%A9%E9%98%B5hessian-matrix"><span class="post-toc-text">二、海塞矩阵(Hessian Matrix)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%89%E6%B1%82%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E6%9E%81%E5%80%BC"><span class="post-toc-text">三、求多元函数极值</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%B1%82%E5%87%BA%E9%A9%BB%E7%82%B9"><span class="post-toc-text">1.求出驻点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%88%A4%E6%96%AD%E6%98%AF%E4%B8%8D%E6%98%AF%E6%9E%81%E5%80%BC%E7%82%B9"><span class="post-toc-text">2.判断是不是极值点</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%9B%9B%E5%87%B8%E9%9B%86%E5%92%8C%E5%87%B8%E5%87%BD%E6%95%B0"><span class="post-toc-text">四、凸集和凸函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%87%B8%E9%9B%86"><span class="post-toc-text">1.凸集</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%87%B8%E5%87%BD%E6%95%B0"><span class="post-toc-text">2.凸函数</span></a></li></ol></li></ol></li></ol>
+          <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%8F%8A%E7%96%91%E6%83%91%E8%AE%B0%E5%BD%95"><span class="post-toc-text">数字电子技术学习及疑惑记录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%80%E6%95%B0%E5%88%B6%E5%92%8C%E7%BC%96%E7%A0%81"><span class="post-toc-text">一、数制和编码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2"><span class="post-toc-text">进制转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%85%AB%E8%BF%9B%E5%88%B6%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="post-toc-text">1.二进制&#x2F;八进制&#x2F;十六进制相互转换</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96%E8%BF%9B%E5%88%B6%E8%BD%AC%E5%8D%81%E8%BF%9B%E5%88%B6"><span class="post-toc-text">2.其他进制转十进制</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8D%81%E8%BF%9B%E5%88%B6%E6%95%B0%E8%BD%AC%E5%85%B6%E4%BB%96%E8%BF%9B%E5%88%B6"><span class="post-toc-text">3.十进制数转其他进制</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%87%A0%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%BC%96%E7%A0%81"><span class="post-toc-text">几种常见编码</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%8C%E9%80%BB%E8%BE%91%E4%BB%A3%E6%95%B0"><span class="post-toc-text">二、逻辑代数</span></a></li></ol></li></ol>
           <a href="#" class="toc-top">回到顶部</a>
         </aside>
       
@@ -169,98 +169,247 @@
             
           </div>
         
-        <h1 id="最优化理论学习笔记">最优化理论学习笔记</h1>
-<p>目的： 找到解决问题的最佳方法</p>
-<p>问题分类：</p>
+        <h1 id="数字电子技术学习及疑惑记录">数字电子技术学习及疑惑记录</h1>
+<p>希望能写东西的同时能够有所收获，巩固加深理解</p>
+<h2 id="一数制和编码">一、数制和编码</h2>
+<p>常用的几种进制：</p>
 <ul>
-<li>函数极值<span class="math inline">\(f(x)\)</span>：静态优化</li>
-<li>泛函极值<span class="math inline">\(f(u+v)\)</span>：动态优化</li>
+<li>二进制(Binary)</li>
+<li>八进制(Octal)</li>
+<li>十进制(Decimal)</li>
+<li>十六进制(Hexadecmial)</li>
 </ul>
-<h2 id="一正定矩阵positive-matrix">一、正定矩阵(Positive Matrix)</h2>
-<p>方阵<span class="math inline">\(A\)</span>对任意一个非零向量<span
-class="math inline">\(\mathbf{x}\)</span>，总是<span
-class="math inline">\(x^TAx&gt;0\)</span>。<span
-class="math inline">\(A\)</span>特征值全为正数。</p>
-<h3 id="判断一个矩阵是否为正定矩阵">判断一个矩阵是否为正定矩阵</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">二进制</th>
+<th style="text-align: center;">八进制</th>
+<th style="text-align: center;">十进制</th>
+<th style="text-align: center;">十六进制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0000</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">0001</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">0010</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">0011</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">0100</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td style="text-align: center;">0101</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td style="text-align: center;">0110</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td style="text-align: center;">0111</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr>
+<td style="text-align: center;">1000</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: center;">1001</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr>
+<td style="text-align: center;">1010</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">A</td>
+</tr>
+<tr>
+<td style="text-align: center;">1011</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">B</td>
+</tr>
+<tr>
+<td style="text-align: center;">1100</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">C</td>
+</tr>
+<tr>
+<td style="text-align: center;">1101</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">D</td>
+</tr>
+<tr>
+<td style="text-align: center;">1110</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">E</td>
+</tr>
+<tr>
+<td style="text-align: center;">1111</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">F</td>
+</tr>
+<tr>
+<td style="text-align: center;">..</td>
+<td style="text-align: center;">..</td>
+<td style="text-align: center;">..</td>
+<td style="text-align: center;">..</td>
+</tr>
+</tbody>
+</table>
+<h3 id="进制转换">进制转换</h3>
+<p>各种不同的数制之间可以相互转换</p>
+<h4
+id="二进制八进制十六进制相互转换">1.二进制/八进制/十六进制相互转换</h4>
 <ul>
-<li>判断特征值是否全为正数 <span
-class="math inline">\(\det(\lambda\mathbf{I}-\mathbf{A})=0\)</span></li>
-<li>顺序主子式全大于零</li>
+<li>八进制的每一位可以由三位二进制数字来表示</li>
+<li>十六进制的每一位可以由四位二进制数字表示</li>
 </ul>
-<h2 id="二海塞矩阵hessian-matrix">二、海塞矩阵(Hessian Matrix)</h2>
-<p><span class="math display">\[\nabla^2f(\mathbf{x})=\begin{bmatrix}
-    \dfrac{\partial^2 f}{\partial x_1^2} &amp; \dfrac{\partial^2
-f}{\partial x_1 \partial x_2} &amp; \cdots &amp; \dfrac{\partial^2
-f}{\partial x_1 \partial x_n} \\
-    \dfrac{\partial^2 f}{\partial x_2 \partial x_1} &amp;
-\dfrac{\partial^2 f}{\partial x_2^2} &amp; \cdots &amp;
-\dfrac{\partial^2 f}{\partial x_2 \partial x_n} \\
-    \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-    \dfrac{\partial^2 f}{\partial x_n \partial x_1} &amp;
-\dfrac{\partial^2 f}{\partial x_n \partial x_2} &amp; \cdots &amp;
-\dfrac{\partial^2 f}{\partial x_n^2} \\
-\end{bmatrix}\]</span></p>
-<h2 id="三求多元函数极值">三、求多元函数极值</h2>
-<h3 id="求出驻点">1.求出驻点</h3>
-<p>对多元函数<span
-class="math inline">\(f\)</span>求一阶偏导，让它等于0求出驻点</p>
-<p><span class="math display">\[\dfrac{\partial f}{\partial
-x}=\begin{pmatrix}
-   \dfrac{\partial f}{\partial x_1}\\
-   \dfrac{\partial f}{\partial x_2}\\
-   \vdots\\
-   \dfrac{\partial f}{\partial x_n}\\
-\end{pmatrix}=0\]</span></p>
-<h3 id="判断是不是极值点">2.判断是不是极值点</h3>
-<p>驻点可能会有多个，假设下面是其中一个驻点</p>
-<p><span class="math display">\[x=\begin{pmatrix}
-   x_1^*\\
-   x_2^*\\
-   \vdots\\
-   x_n^*\\
-\end{pmatrix}\]</span></p>
-<p>将其带入到海塞矩阵中，判断海塞矩阵的正负定性。</p>
+<p>可以将二进制三个或两个对应为一组，对应八进制或十六进制中的一位数字</p>
+<h4 id="其他进制转十进制">2.其他进制转十进制</h4>
+<p>以下面这个二进制数为例 <span
+class="math display">\[101.11\]</span></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><span
+class="math inline">\(1\)</span></th>
+<th style="text-align: center;"><span
+class="math inline">\(0\)</span></th>
+<th style="text-align: center;"><span
+class="math inline">\(1\)</span></th>
+<th style="text-align: center;"><span
+class="math inline">\(.\)</span></th>
+<th style="text-align: center;"><span
+class="math inline">\(1\)</span></th>
+<th style="text-align: center;"><span
+class="math inline">\(1\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span
+class="math inline">\(4\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(2\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(dot\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(0.5\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(0.25\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span
+class="math inline">\(2^2\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(2^1\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(2^0\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(dot\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(2^{-1}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(2^{-2}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span
+class="math inline">\(N^2\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(N^1\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(dot\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(N^{-1}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(N^{-2}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>十进制数= <span
+class="math display">\[1*2^2+0*2^1+1*1+1*2^{-1}+1*2^{-2} =
+5.75\]</span></p>
+<h4 id="十进制数转其他进制">3.十进制数转其他进制</h4>
+<p><span class="math inline">\(10.375\)</span>转换成二进制:</p>
+<p>小数点之前：连续除以2取余数直到整数部分为零</p>
 <ul>
-<li>海塞矩阵正定，该点是极小值点</li>
-<li><span class="math inline">\(f(x)\)</span> 的极大值是 <span
-class="math inline">\(-f(x)\)</span> 的极小值</li>
+<li>第一次：0 最低位</li>
+<li>第二次：1 ^</li>
+<li>第三次：0 |</li>
+<li>第四次：1 |</li>
+<li>第五次：0 最高位</li>
 </ul>
-<p>求极值： <span
-class="math display">\[f(x)=x^4+8x^3+22x^2+24x\]</span></p>
-<h2 id="四凸集和凸函数">四、凸集和凸函数</h2>
-<h3 id="凸集">1.凸集</h3>
-<p><strong>定义</strong> ：<span class="math inline">\(D\subset
-\mathbb{R}^n，\forall x,y \in D，\forall \lambda \in[0,1]满足\lambda
-x(1-\lambda)y\in D\)</span>，称D为凸集合</p>
-<p><strong>特点</strong>
-：即内部无洞，边缘无内凹，任意两点间的连线仍然在集合内部</p>
-<p><strong>性质</strong> :</p>
+<p>小数点之后：连乘2取整直到小数部分为零</p>
 <ul>
-<li>若<span class="math inline">\(\mathcal{D}\)</span>，<span
-class="math inline">\(\mathcal{A}\)</span>都为凸集，则<span
-class="math inline">\(\mathcal{D} \bigcap
-\mathcal{A}\)</span>，仍为凸集</li>
-<li></li>
+<li>第一次：0 (0.75)</li>
+<li>第二次：1 (1.45)</li>
+<li>第三次：0 (0.90)</li>
+<li>第四次：1 (1.80) &lt;&lt;&lt;|</li>
+<li>第五次：1 (1.60)</li>
+<li>第六次：1 (1.20)</li>
+<li>第七次：0 (0.40)</li>
+<li>第八次：0 (0.80) &lt;&lt;&lt;|</li>
 </ul>
-<p><strong>常见的凸集</strong> <span class="math inline">\(\alpha \in
-\mathbb{R}^n\)</span></p>
+<p>无法使小数部分归零,需限制精度取值</p>
+<p>小数部分先算出来的是高位，从上往下写 <span
+class="math display">\[01010.0101110……\]</span>
+这里算的保留了最高位的零，因为我在C语言中把一个十进制整数转换成二进制字符串的时候发现这样算最高位始终会是一个零，这里提醒我注意倒序字符串之前要把最高位换成字符串结束符<code>\0</code></p>
+<h3 id="几种常见编码">几种常见编码</h3>
 <ul>
-<li><strong>超平面</strong> ：<span class="math inline">\(H=\left \{x
-\in \mathbb{R}^n | \alpha^T x=b \right \}\)</span></li>
-<li><strong>半空间（闭）</strong> ：<span class="math inline">\(H=\left
-\{x \in \mathbb{R}^n | \alpha^T x&lt;=b \right \}，H=\left \{x \in
-\mathbb{R}^n | \alpha^T x&gt;=b \right \}\)</span></li>
-<li><strong>半空间（开）</strong> ：半空间（闭）去掉<span
-class="math inline">\(\alpha^T x=b\)</span></li>
+<li>BCD(Binary Coded Decmial)码
+<ul>
+<li>8421 BCD码</li>
+<li>5421 BCD码</li>
+<li>2421 BCD码</li>
+<li>余3码</li>
+</ul></li>
+<li>格雷码</li>
+<li>ASCII</li>
+<li>汉明码</li>
+<li>奇偶数校验码</li>
 </ul>
-<p>对与上面这三种的证明方法一致，这里以超平面为例： <span
-class="math display">\[\alpha \left [\lambda x + (1-\lambda)y \right ] =
-b(\lambda + 1 - \lambda) = b\]</span>上面简单证明了超平面为凸集</p>
-<p>证明<span class="math inline">\(\mathcal{L}=\left \{
-x\in\mathcal{R}^n|x=x_0+\lambda d \right\}\)</span>，为凸集，<span
-class="math inline">\(d,x_0\)</span>是给定非零向量, <span
-class="math inline">\(\lambda\)</span>为任意实数，其证明方法也是与上面一致的，只需要将数据带入就行。</p>
-<h3 id="凸函数">2.凸函数</h3>
+<h2 id="二逻辑代数">二、逻辑代数</h2>
 
       </div>
     </div>
@@ -277,23 +426,11 @@ class="math inline">\(\lambda\)</span>为任意实数，其证明方法也是与
     
     <div class="post-nav">
   
-    <a class="post-nav-item-left" href="/archives/39715/">
-      <div class="text-align">
-        <svg t="1670570876164"
-             class="icon"
-             viewBox="0 0 1024 1024"
-             width="16"
-             height="16">
-          <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596" />
-        </svg>
-        <span class="text-small">上一篇</span>
-      </div>
-      <div>数电</div>
-    </a>
+    <div class="post-nav-item-left"></div>
   
   <div class="vhr"></div>
   
-    <a class="post-nav-item-right" href="/archives/21724/">
+    <a class="post-nav-item-right" href="/archives/21457/">
       <div class="text-align">
         <span class="text-small">下一篇</span>
         <svg t="1670570876164"
@@ -305,7 +442,7 @@ class="math inline">\(\lambda\)</span>为任意实数，其证明方法也是与
           <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596" />
         </svg>
       </div>
-      GCC基本使用
+      Optimization
     </a>
   
 </div>
