@@ -111,7 +111,7 @@
 .post-inner--toc,
 .post-inner--toc--toc {
   max-width: 760px;
-  padding-right: 230px;
+  padding-right: 150px;
 }
 .post-inner--toc .post-content__body,
 .post-inner--toc--toc .post-content__body {
@@ -153,29 +153,36 @@
   margin: 40px 0;
 }
 .toc-outer {
-  opacity: 0.9;
+  opacity: 0.95;
   position: sticky;
-  top: 60px;
+  top: 200px;
   float: right;
-  margin-right: -230px;
-  max-height: calc(100vh - 250px);
+  margin-right: -380px;
+  max-height: calc(100vh - 100px);
   min-height: 400px;
   padding-left: 30px;
+  padding-top: 20px;
   overflow-y: auto;
-  width: 200px;
+  width: 300px;
   color: #666;
+  border-radius: 3px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  -webkit-font-smoothing: antialiased;
 }
 .toc-outer .toc-title,
 .toc-outer .toc-top {
   display: inline-block;
-  padding: 8px 0;
+  padding: 10px 0;
   color: #555;
-  font-size: 0.875em;
-  height: 30px;
-  line-height: 30px;
+  font-size: 20px;
+  height: auto;
+  line-height: 50px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
 .toc-outer .toc-title {
-  border-top: 2px solid #eff2f3;
+  border-top: 5px solid #eff2f3;
+  font-size: 25px;
 }
 .toc-outer a {
   text-decoration: none;
@@ -197,14 +204,17 @@
   display: inline-block;
   text-align: left;
   box-sizing: border-box;
-  line-height: 1.25em;
+  line-height: 1.5em;
+}
+.toc-outer .post-toc-level-1 {
+  font-size: 25px;
 }
 .toc-outer .post-toc-level-2 {
-  font-size: 15px;
+  font-size: 23px;
   margin: 5px 0;
 }
 .toc-outer .post-toc-level-3 {
-  font-size: 14px;
+  font-size: 18px;
   padding-left: 10px;
 }
 .post__foot {
@@ -254,6 +264,28 @@
 }
 .related-post {
   margin: 40px 0;
+}
+.mermaid {
+  background-image: linear-gradient(45deg, rgba(200,200,200,0.1) 25%, transparent 25%, transparent 75%, rgba(200,200,200,0.1) 75%, rgba(200,200,200,0.1)), linear-gradient(45deg, rgba(200,200,200,0.1) 25%, transparent 25%, transparent 75%, rgba(200,200,200,0.1) 75%, rgba(200,200,200,0.1));
+  background-size: 800px 800px;
+  background-position: 0 0, 10px 10px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #bbb;
+  overflow: auto;
+}
+/* 通过 CSS 自定义思维导图连接线颜色 */
+.mermaid path {
+  stroke: #666 !important; /* 控制思维导图连接线 */
+  stroke-width: 3px !important;
+}
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node polygon {
+  fill: #f0f0f0 !important;
+  stroke: #ccc !important;
+  stroke-width: 2px !important;
 }
 @media screen and (max-width: 760px) {
   .post-inner--toc {

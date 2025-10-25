@@ -193,8 +193,22 @@
       <script src='https://unpkg.com/mermaid@latest/dist/mermaid.min.js'></script>
       <script>
         if (window.mermaid) {
-          mermaid.initialize({"startOnload":true});
-        }
+          mermaid.initialize({
+                startOnLoad: true,
+                theme: 'base',
+                themeVariables: {
+                primaryColor: '#f7f7f7',
+                primaryTextColor: '#333',
+                primaryBorderColor: '#ccc',
+                lineColor: '#666', 
+                secondaryColor: '#eee',
+                tertiaryColor: '#f0f0f0',
+                tertiaryBorderColor: '#ccc',
+                tertiaryTextColor: '#333',
+                mainBkg: '#fafafa',
+                clusterBkg: '#f0f0f0'
+                }
+        });
       </script>
     
   </article>
