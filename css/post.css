@@ -156,7 +156,7 @@
   border-radius: 3px;
   opacity: 0.95;
   position: sticky;
-  top: 200px;
+  top: 100px;
   float: right;
   margin-right: -380px;
   max-height: calc(100vh - 100px);
