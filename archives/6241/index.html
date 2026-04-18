@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <title>
+      
+        MCU | Pixel's Blog
+      
+    </title>
+    <meta name="description" content="Look forward my friend!" />
+    <meta name="keywords" content="" />
+    
+      <link rel="apple-touch-icon"
+            sizes="180x180"
+            href="/images/apple-touch-icon.jpg" />
+    
+    
+      <link rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/images/favicon-32x32.png" />
+    
+    
+      <link rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/images/favicon-16x16.png" />
+    
+    
+      <link rel="mask-icon"
+            href="/images/logo.svg"
+            color="" />
+    
+    
+    
+      
+  <style>
+    @font-face {
+        font-family:sourceHanSerif;
+        src: url(/font/normal.ttf);
+        font-weight: normal;
+    }
+  </style>
+
+  <style>
+    @font-face {
+        font-family:sourceHanSerif;
+        src: url(/font/bold.ttf);
+        font-weight: bold;
+    }
+  </style>
+
+
+    
+    <link rel="stylesheet"
+          type="text/css"
+          href='/css/layout.css' />
+    
+    <script src="https://kit.fontawesome.com/c4ba0a82e6.js" crossorigin="anonymous"></script>
+    
+  <link rel="stylesheet" type="text/css" href="/css/post.css"/>
+  
+
+  <meta name="generator" content="Hexo 8.0.0"><link rel="alternate" href="/atom.xml" title="Pixel's Blog" type="application/atom+xml">
+</head>
+  <body>
+    
+      <div id="search-mask" style="display:none">
+  <div class="search-main" id="search-main">
+    <div class="search__head">
+      <div class="search-form">
+        <svg t="1706347533072"
+             class="icon"
+             viewBox="0 0 1024 1024"
+             version="1.1"
+             xmlns="http://www.w3.org/2000/svg"
+             p-id="7828"
+             width="20"
+             height="20">
+          <path d="M685.6 660.336l155.152 155.168a16 16 0 0 1 0 22.624l-11.312 11.328a16 16 0 0 1-22.624 0l-158.528-158.544a289.792 289.792 0 0 1-165.152 51.36C322.336 742.256 192 611.904 192 451.12 192 290.336 322.336 160 483.136 160c160.784 0 291.12 130.336 291.12 291.136 0 82.112-33.984 156.272-88.672 209.2z m-202.464 33.92c134.272 0 243.12-108.848 243.12-243.12C726.256 316.848 617.408 208 483.136 208 348.848 208 240 316.848 240 451.136c0 134.272 108.848 243.12 243.136 243.12z" fill="#000000" p-id="7829">
+          </path>
+        </svg>
+        <input id="search-input" placeholder="搜索文章">
+        <svg t="1706361500528"
+             id="search-clear"
+             class="icon"
+             viewBox="0 0 1024 1024"
+             version="1.1"
+             xmlns="http://www.w3.org/2000/svg"
+             p-id="4351"
+             width="20"
+             height="20">
+          <path d="M512 562.688l-264.2944 264.2944-50.688-50.688L461.312 512 197.0176 247.7056l50.688-50.688L512 461.312l264.2944-264.2944 50.688 50.688L562.688 512l264.2944 264.2944-50.688 50.688L512 562.688z" fill="#00" p-id="4352">
+          </path>
+        </svg>
+      </div>
+    </div>
+    <div class="search__body" id="search-result"></div>
+    <div class="search__foot"></div>
+  </div>
+</div>
+
+    
+    <div class="head">
+      <div class="nav">
+        <a href='/' class="nav-logo">
+          <img alt="logo" height="60px" width="60px" src="/images/logo.svg" />
+        </a>
+        <input id="navBtn" type="checkbox" />
+        <div class="nav-right">
+          
+            <div class="search-outer"><div class="search" id="search-btn">
+  <svg t="1706347533072"
+       class="icon"
+       viewBox="0 0 1024 1024"
+       version="1.1"
+       xmlns="http://www.w3.org/2000/svg"
+       p-id="7828"
+       width="20"
+       height="20">
+    <path d="M685.6 660.336l155.152 155.168a16 16 0 0 1 0 22.624l-11.312 11.328a16 16 0 0 1-22.624 0l-158.528-158.544a289.792 289.792 0 0 1-165.152 51.36C322.336 742.256 192 611.904 192 451.12 192 290.336 322.336 160 483.136 160c160.784 0 291.12 130.336 291.12 291.136 0 82.112-33.984 156.272-88.672 209.2z m-202.464 33.92c134.272 0 243.12-108.848 243.12-243.12C726.256 316.848 617.408 208 483.136 208 348.848 208 240 316.848 240 451.136c0 134.272 108.848 243.12 243.136 243.12z" fill="#000000" p-id="7829">
+    </path>
+  </svg>
+  <span>搜索</span>
+  <span class="search-shortcut-key">Ctrl K</span>
+</div>
+</div>
+          
+          <div class="nav-menu">
+            
+              
+                <a class="nav-menu-item" href="/paper">文章</a>
+              
+                <a class="nav-menu-item" href="/life">生活琐记</a>
+              
+                <a class="nav-menu-item" href="/note">学习笔记</a>
+              
+            
+            
+          </div>
+        </div>
+        <label class="nav-btn" for="navBtn"></label>
+      </div>
+    </div>
+    <div class="body">
+      
+  <article class="post-content">
+    <div class="post-inner">
+      <div class="post-content__head">
+        <div class="post-title">MCU</div>
+        <div class="post-info">
+          
+  
+
+
+          <span class="post-date">|2026-04-16|</span>
+        </div>
+      </div>
+      
+      <div class="post-content__body">
+        
+          <div class="post-gallery">
+            
+          </div>
+        
+        <p>[toc]</p>
+<h1 id="单片机原理">8051 单片机原理</h1>
+<h2 id="单片机概述">单片机概述</h2>
+<p>单片机就是在一个半导体芯片上集成了中央处理器（Central Processing
+Unidpjt，CPU）、存储器、输入/输出（Input/Output，I/O）接口、时钟振荡电路、定时/计数器和中断系统等计算机的主要功能部件，单个芯片相当于一台微型计算机，称为微型单片计算机（Single
+Chip Microcomputer，SCM）简称单片机</p>
+<p>单片机适用于各种测量控制和数据处理的场合，也称为微控制器（Micro
+Controller
+Unit，MCU）；由于其嵌入式应用的特点又称为嵌入式微控制器（Embedded Micro
+Controller Unit，EMCU）</p>
+<h3 id="一单片机特点和应用">一、单片机特点和应用</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">特点</th>
+<th style="text-align: center;">应用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">性价比高</td>
+<td style="text-align: center;">工业自动化领域</td>
+</tr>
+<tr>
+<td style="text-align: center;">集成度高</td>
+<td style="text-align: center;">智能仪器仪表领域</td>
+</tr>
+<tr>
+<td style="text-align: center;">控制能力强</td>
+<td style="text-align: center;">消费类电子产品领域</td>
+</tr>
+<tr>
+<td style="text-align: center;">低功耗</td>
+<td style="text-align: center;">通信领域</td>
+</tr>
+</tbody>
+</table>
+<h3 id="二8051-单片机存储结构">二、8051 单片机存储结构</h3>
+<h4 id="数据存储空间">1. 数据存储空间</h4>
+<ul>
+<li>片内集成有 256B 数据存储空间，可根据需要扩展，外部最多扩展 64KB</li>
+<li>内部低 128B 为片内 RAM，高 128B 为 SFR</li>
+<li>单片机访问内外部 RAM 指令不同，实际做多可用 RAM 为
+<strong>64KB+128B</strong></li>
+</ul>
+<p>空间分配结构</p>
+<ul>
+<li>00H 到 1FH 为
+<strong>工作寄存器组区</strong>（<strong>32B</strong>）</li>
+<li>20H 到 2FH 为
+<strong>位寻址区</strong>（支持字节，位寻址）（<strong>16B</strong>)</li>
+<li>30H 到 7FH 为 <strong>用户 RAM
+区</strong>（设置堆栈、数据存储）（<strong>80B</strong>）</li>
+<li>80H 到 FFH 为 <strong>SFR</strong>（<strong>128B</strong>）</li>
+</ul>
+<h4 id="程序存储空间">2. 程序存储空间</h4>
+<p>最多支持 64KB，16 位寻址（PC），片内 4KB</p>
+<h5 id="rom-两种使用方式">ROM 两种使用方式</h5>
+<ul>
+<li><span
+class="math inline">\(\overline{EA}=1\)</span>，内部优先（0000H~0FFFH），外部补充（1000H~FFFFH）</li>
+<li><span
+class="math inline">\(\overline{EA}=0\)</span>，使用外部（0000H~FFFFH）</li>
+</ul>
+<p>这里我原以为能使用的一共 68KB：先让 <span
+class="math inline">\(\overline{EA}=1\)</span> 为 1 使用内部的
+4KB，然后让 <span class="math inline">\(\overline{EA}=0\)</span>
+使用外部的 64KB，网上找了一圈资料没有说这个问题的， 问了 DeepSeek 说是
+<span class="math inline">\(\overline{EA}\)</span>
+引脚在复位后锁存，中途改变也没有用</p>
+<h3
+id="三特殊功能寄存器sfrspecial-function-register">三、特殊功能寄存器(SFR，Special
+Function Register)</h3>
+<h4 id="累加器-accaccumulator-register">累加器 ACC（Accumulator
+Register）</h4>
+<ul>
+<li>8 位寄存器</li>
+<li>助记符：A</li>
+<li>应用广泛</li>
+<li>常用符号：ACC</li>
+</ul>
+<p>几乎所有的算术运算和绝大多数逻辑运算在累加器 ACC 中完成</p>
+<h4 id="寄存器-b">寄存器 B</h4>
+<ul>
+<li>8 位寄存器</li>
+<li>主要用于乘除运算，也可做为一般寄存器使用</li>
+</ul>
+<p>乘法运算：运算前存放乘数，运算后存放乘积的高 8
+位；除法运算：运算前存放除数，运算后存放余数。</p>
+<h4 id="程序状态字pswprogram-state-word">程序状态字（PSW，Program State
+Word）</h4>
+<ul>
+<li>8 位寄存器</li>
+</ul>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;">PSW 位</th>
+<th style="text-align: center;">PSW.7</th>
+<th style="text-align: center;">PSW.6</th>
+<th style="text-align: center;">PSW.5</th>
+<th style="text-align: center;">PSW.4</th>
+<th style="text-align: center;">PSW.3</th>
+<th style="text-align: center;">PSW.2</th>
+<th style="text-align: center;">PSW.1</th>
+<th style="text-align: center;">PSW.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">位符号</td>
+<td style="text-align: center;">Cy</td>
+<td style="text-align: center;">Ac</td>
+<td style="text-align: center;">F0</td>
+<td style="text-align: center;">RS1</td>
+<td style="text-align: center;">RS0</td>
+<td style="text-align: center;">OV</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">P</td>
+</tr>
+<tr>
+<td style="text-align: center;">位地址</td>
+<td style="text-align: center;">D7</td>
+<td style="text-align: center;">D6</td>
+<td style="text-align: center;">D5</td>
+<td style="text-align: center;">D4</td>
+<td style="text-align: center;">D3</td>
+<td style="text-align: center;">D2</td>
+<td style="text-align: center;">D1</td>
+<td style="text-align: center;">D0</td>
+</tr>
+<tr>
+<td style="text-align: center;">位名称</td>
+<td style="text-align: center;">进位标志位 Carry</td>
+<td style="text-align: center;">半字节进位位（辅助进位位）Auxiliary
+Carry</td>
+<td style="text-align: center;">用户标志位</td>
+<td style="text-align: center;">工作寄存器选择位 1</td>
+<td style="text-align: center;">工作寄存器选择位 0</td>
+<td style="text-align: center;">溢出标志位 Overflow</td>
+<td style="text-align: center;">系统保留位（用户标志位）</td>
+<td style="text-align: center;">奇偶标志位</td>
+</tr>
+<tr>
+<td style="text-align: center;">位功能</td>
+<td style="text-align: center;">加法最高位进位/减法最高位借位：Cy =
+1</td>
+<td style="text-align: center;">加减运算中低四位向高四位进位/借位：Ac =
+1</td>
+<td style="text-align: center;">存放一位数据</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">符号数的运算超出：-128~127 时，OV =
+1</td>
+<td style="text-align: center;">存放一位数据</td>
+<td style="text-align: center;">ACC 中有奇数个 1 时 P = 1</td>
+</tr>
+</tbody>
+</table>
+<h5 id="ov-的计算">OV 的计算</h5>
+<h5 id="rs1-rs0-用于选择-ram-工作寄存器区">RS1 RS0 用于选择 RAM
+工作寄存器区</h5>
+<p>按顺序从 00H 到 1FH 共计 32B</p>
+<ul>
+<li>00 ：0 区 00H~07H</li>
+<li>01 ：1 区 08H~0FH</li>
+<li>10 ：2 区 10H~17H</li>
+<li>11 ：3 区 18H~1FH</li>
+</ul>
+<h4 id="堆栈指针-spstack-pointer">堆栈指针 SP(Stack-Pointer)</h4>
+<ul>
+<li>8 位专用寄存器</li>
+<li>指示栈顶在内部 RAM 中的地址</li>
+<li>初始值位 07H</li>
+</ul>
+<h5 id="先加后压规则">“先加后压”规则</h5>
+<p>入栈时，SP 先加 1 然后将数据入栈（push），出栈（pop）时先读出数据，SP
+再减 1</p>
+<p>SP 初始值为 07H，则 push 的第一个数据地址为 08H</p>
+<h5 id="堆栈指针使用方式">堆栈指针使用方式</h5>
+<ul>
+<li>自动方式：再调用子程序或断点时，断点地址自动入栈，程序返回时，断点地址再自动弹回
+PC，不需要用户干涉</li>
+<li>指令方式：使用专用的堆栈操作指令进行 push/pop
+操作，例如保护现场、恢复现场。</li>
+</ul>
+<h3 id="数据指针-dptr">数据指针 DPTR</h3>
+<ul>
+<li>16 位 SFR</li>
+<li>当单片机需要访问 ROM，外部 RAM，和 I/O 端口时，提供一个 16
+位地址，是 <strong>8051 单片机中唯一可以通过指令赋值的 16
+位寄存器</strong></li>
+<li>可以 16 位操作（DPTR），又可以拆分成两个独立的 8
+位寄存器使用：DPH、DPL</li>
+</ul>
+<h3 id="io-接口">I/O 接口</h3>
+<p>既可采用字节寻址操作，又可采用位寻址操作</p>
+<h2 id="引脚及其功能">8051 引脚及其功能</h2>
+<hr />
+<h1 id="汇编语言">汇编语言</h1>
+<p>这里抄书复习一下</p>
+<h2 id="概述">概述</h2>
+<p><strong>指令是 CPU
+控制计算机进行某种操作的命令，指令系统则是全部指令的合集</strong>。根据指令形式的不同，指令分为以下两种。</p>
+<ul>
+<li><strong>机器指令</strong>：又称
+<strong>机器码</strong>，由二进制代码 0 和 1
+表示，能够被计算机直接识别和执行。</li>
+<li><strong>助记符指令</strong>：由助记符表示的
+<strong>机器指令</strong>。由于机器指令不便于被人们识别、记忆理解和使用，因此给每条机器指令赋予助记符号表示，这就形成了助记符指令，<strong>它和机器指令一一对应</strong>，编写的程序效率高，占用存储空间小，运行速度快，可以编写出最优化的程序。</li>
+</ul>
+<p><strong>用助记符书写的指令系统称为汇编语言</strong></p>
+<p>用 <strong>汇编语言</strong> 编写的程序称为
+<strong>源程序</strong>，用 <strong>机器语言</strong> 编写的程序称为
+<strong>目标程序</strong>。</p>
+<p><strong>汇编</strong>：把汇编语言编写的源程序翻译成机器语言编写的目标程序的过程</p>
+<h2 id="指令格式">指令格式</h2>
+<p><code>[标号:] 操作码助记符 [目的操作数,] [源操作数] [;注释]</code></p>
+<p>例如：</p>
+<p><code>START: MOV A, #01H; (A) &lt;-- 01H</code></p>
+<ul>
+<li><strong>标号</strong>：给该条语句起个名字，以便在其他语句中寻找该条语句，<strong>代表该条语句所在的地址</strong>，
+<ul>
+<li>由 1~6 个字符数字串组成</li>
+<li>第一个必须是字母</li>
+<li>不一定每句都有标号，<strong>标号不产生目标代码</strong>
+<ul>
+<li>调用的标号，在汇编后直接转换成标号处语句的地址</li>
+</ul></li>
+<li>汇编语言中 <strong>已经有确切定义的符号不能作为标号</strong>，例如：
+<ul>
+<li>指令助记符</li>
+<li>伪指令</li>
+<li>寄存器名</li>
+<li>…</li>
+</ul></li>
+<li>同一个标号在一个程序中只能定义一次，标号后面必须跟
+<code>;</code></li>
+</ul></li>
+<li><strong>操作码助记符</strong>：规定指令进行何种操作，是指令中不能空缺的部分，一般采用具有相关含义的英语单词或缩写表示</li>
+<li><strong>操作数</strong>：说明被操作数的源及目的，由源操作数和目的操作数之分。它可以是数据本身或其存储的位置。</li>
+<li><strong>注释</strong>：便于阅读理解程序，对语句进行的解释说明，不产生目标代码。用
+<code>;</code> 开始表示注释</li>
+</ul>
+<h3 id="指令描述符号说明">指令描述符号说明</h3>
+<ul>
+<li><strong><code>Rn</code></strong>：当前寄存器组的 8 个通用寄存器
+R0~R7，n = 0~7</li>
+<li><strong><code>Ri</code></strong>：可用作 <strong><a
+href="#寄存器间接寻址">间接寻址</a></strong> 的寄存器，只能是 <strong>R0
+和 R1</strong> 寄存器，i = 0,1</li>
+<li><strong><code>direct</code></strong>：<strong>8
+位直接地址</strong>，在指令中表示直接寻址方式，<strong>寻址范围
+256B</strong>，其值包括 0~127（内部 RAM 低 128B），128~255（内部 RAM 高
+128B，即 SFR）</li>
+<li><strong><code>#data8/16</code></strong>：8 位/16 位立即数，例如：
+<ul>
+<li>8 位：<code>#00H</code></li>
+<li>16 位：<code>#0000H</code></li>
+</ul></li>
+<li><strong><code>Addr11/16</code></strong>：11 位/16 位的目的地址</li>
+<li><strong><code>rel</code></strong>：转移指令中的偏移量，为 8
+为带符号补码数，范围 -128~+127</li>
+<li><strong><code>DPTR</code></strong>：16 位数据指针</li>
+<li><strong><code>bit</code></strong>：位地址</li>
+<li><strong><code>A</code></strong>：累加器 ACC 的缩写</li>
+<li><strong><code>B</code></strong>：寄存器 B</li>
+<li><strong><code>C/Cy</code></strong>：进位标志位，也成为位累加器</li>
+<li><strong><code>@</code></strong>：间接寻址寄存器前缀</li>
+<li><strong><code>/</code></strong>：加载位操作数前面表示对该位状态取反</li>
+<li><strong><code>(X)</code></strong>：<code>X</code> 单元中的内容</li>
+<li><strong><code>((X))</code></strong>：以 <code>X</code>
+中的内容为地址的存储单元中的内容</li>
+<li><strong><code>←</code></strong>：数据传送方向</li>
+<li><strong><code>$</code></strong>：当前指令起始地址</li>
+</ul>
+<h2 id="寻址方式">寻址方式</h2>
+<p><strong>寻址方式是在指令中寻找操作数或其所在地址的方法</strong>，寻址方式越丰富，灵活性越大，能实现的功能也就越强，<strong>MSC-51</strong>
+单片机中共有七种寻址方式，<strong>需注意指令的寻址方式的特点</strong> 和
+<strong>寻址范围</strong></p>
+<h3 id="寄存器寻址">寄存器寻址</h3>
+<p>寄存器寻址是指操作数存放在寄存器中，<strong>通过给出寄存器名的形式来访问操作数</strong>
+的寻址方式</p>
+<p><strong>寻址范围</strong>：</p>
+<ul>
+<li><p><strong>通用寄存器</strong>，4 组 32
+个通用寄存器，但**只对当前工作寄存器组的 8
+个寄存器寻址，指令中的寄存器名称只能是 R0~R7</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs asm">MOV A, R0	        ; 将工作寄存器 R0 中的内容复制到寄存器 A 中<br></code></pre></td></tr></table></figure></li>
+<li><p><strong>部分特殊功能寄存器（SFR）</strong>，例如累加器<code>A</code>，寄存器<code>B</code>以及数据指针<code>DPTR</code>等</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs asm">MOV 30H, A	    ; 将 A 中的内容复制到片内 RAM 30H 单元中<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="直接寻址">直接寻址</h3>
+<p>直接寻址是<strong>直接给出操作数在存储器中存放地址</strong>的寻址方式。可用符号<code>direct</code>表示指令中的直接地址。</p>
+<p><strong>寻址范围</strong>：</p>
+<ul>
+<li><p><strong>片内RAM低128B</strong>，在指令中直接以单元地址形式给出。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs asm">MOV A, 50H	    ; 将片内 50H 单元中的内容送入 A 中<br></code></pre></td></tr></table></figure></li>
+<li><p><strong>SFR</strong>，除以单元地址形式给出外，还可以以寄存器符号形式给出。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs asm">MOV A, P0	        ; 将寄存器 P0 的内容复制到累加器 A 中<br></code></pre></td></tr></table></figure>
+<p>这里<strong><code>P0</code>是直接寻址</strong></p></li>
+</ul>
+<h3 id="立即寻址">立即寻址</h3>
+<p>立即寻址是<strong>直接在指令中给出操作数的寻址方式</strong>，这种操作数称为<strong>立即数</strong>，立即数有8位和16位两种，可以采用<strong>二进制</strong>，<strong>十进制</strong>，<strong>十六进制</strong>三种形式，立即数前面必须加<code>#</code>。<strong>十六进制数以A~F打头的数前要加<code>0</code>以区别于标号</strong></p>
+<p><strong>寻址范围</strong>：程序存储器，因为立即数是放在程序存储器中的常数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs asm">MOV A, #5AH			; 把 8 位立即数 5AH 复制到 A 中<br>MOV DPTR, #1808H	; 把 16 位立即数 1808H 复制到 DPTR 中<br></code></pre></td></tr></table></figure>
+<h3 id="寄存器间接寻址">寄存器间接寻址</h3>
+<p>寄存器间接寻址是<strong>通过寄存器给出操作数在存储单元中的存储地址</strong>的寻址方式。该寻址方式加，操作数所在的地址存放在指定的寄存器中，而操作数本身则存放在该地址所对应的单元中，间接寻址基顿起前加<code>@</code></p>
+<p>能用与寄存器间接寻址的寄存器有<code>R0</code>,<code>R1</code>,<code>DPTR</code>,<code>SP</code></p>
+<p>注：<strong>和C语言中的指针一个意思</strong></p>
+<p><strong>寻址范围</strong>：</p>
+<ul>
+<li><p><strong>片内RAM单元，只能用寄存器<code>R0</code>,<code>R1</code></strong>，指令为<code>MOV</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs asm">MOV A, @R0	    ; 将 R0 中的内容为地址的片内 RAM 存储单元中的内容送入 A 中<br></code></pre></td></tr></table></figure></li>
+<li><p><strong>片外RAM单元，可使用寄存器<code>R0</code>,<code>R1</code>,<code>DPTR</code></strong>，指令为`MOVX``</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs asm">MOVX A, @DPTR<br></code></pre></td></tr></table></figure></li>
+<li><p><strong>堆栈操作</strong>：指令<code>PUSH</code>,<code>POP</code>是以堆栈指针<code>SP</code>作为间接寻址寄存器的间接寻址方式</p>
+<ul>
+<li>因为<code>SP</code>存放栈顶单元的位置</li>
+</ul></li>
+</ul>
+<h3 id="基址加变址寻址">基址加变址寻址</h3>
+<p>基址加变址寻址是<strong>以<code>DPTR</code>和<code>PC</code>的内容作为基址</strong>，以累加器<strong><code>A</code>的内容作为偏移量</strong>，将两者相加得到的16位地址作为目的地址的寻址方式。可用于读取程序存储器中的数据或者进行<strong>程序散转[^1]</strong></p>
+<p>本寻址方式指令只有三条</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs asm">MOVC A, @A+PC<br>MOVC A, @A+DPTR<br>JMP @A+DPTR<br></code></pre></td></tr></table></figure>
+<h3 id="相对寻址">相对寻址</h3>
+<p>相对寻址主要用于转移指令，一般<strong>在转移指令中直接给出要转向的目标地址</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs asm">SJMP LOOP<br></code></pre></td></tr></table></figure>
+<p>汇编完成后，上述指令编译成机器码为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs asm">80H rel<br></code></pre></td></tr></table></figure>
+<p>其中：标号<code>LOOP</code>表示目标地址，<strong>汇编时，编译器会自动根据<code>SJMP LOOP</code>指令和标号<code>LOOP</code>处的指令的地址自动计算和填入偏移量<code>rel</code></strong></p>
+<p>以下给出具体的程序来说明汇编时<code>rel</code>的计算过程，如</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">指令地址</th>
+<th style="text-align: center;">机器码</th>
+<th>源程序</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>0004H</code></td>
+<td style="text-align: center;"><code>80H 4AH</code></td>
+<td><code>SJMP LOOP</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">…</td>
+<td style="text-align: center;"></td>
+<td>…</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>0050H</code></td>
+<td style="text-align: center;"><code>74H 20H</code></td>
+<td><code>LOOP: MOV A, #20H</code></td>
+</tr>
+</tbody>
+</table>
+<p>当CPU执行到<code>SJMP LOOP</code>时，<code>SJMP</code>指令两字节，<strong>PC的值</strong>为：<code>0004H+02H=0006H</code>，而目标程序<code>LOOP</code>的地址为<code>0050H</code>，汇编时自动计算出偏移量<code>rel</code></p>
+<p>计算方法：<code>rel</code>=<code>目标地址</code>-<code>PC</code>=<code>0050H</code>-<code>0006H</code>=<code>004AH</code></p>
+<p>因此汇编后生成的机器码为<code>80H 4AH</code>，<code>rel</code>是一个带符号的8位二进制补码，取值范围为<code>-128~127</code>，由于<code>rel</code>为8位偏移量，因此<strong>目标地址和当前PC的差值必须为<code>-128~127</code></strong>，否则将跳出范围，复数表示往上跳，正数表示往下跳</p>
+<p><strong>:exclamation:</strong>当强行填入导致计算溢出的数，将保留<code>rel</code>低八位作为跳转</p>
+<h3 id="位寻址">位寻址</h3>
+<p>位寻址是指令中<strong>直接给出位操作数</strong>的寻址方式，<strong>位寻址只能出现在位操作指令中</strong>，位地址可用通用符号<code>bit</code>表示</p>
+<p><strong>寻址范围</strong></p>
+<ul>
+<li><p><code>片内RAM</code>的<code>20H~2FH</code>为位寻址空间</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ASM">MOV C, 2EH	        ; 将位地址 2EH 中的内容送入位累加器 C 中<br></code></pre></td></tr></table></figure></li>
+<li><p><strong>地址能被8整除的特殊功能寄存器</strong>[^2]</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs asm">MOV C, P1.1	        ; 将位 P1.1 中的内容送入位累加器 C 中<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="指令分类介绍">指令分类介绍</h2>
+<p>MSC-51 单片机指令系统共有指令111条，可按不同方法进行分类：</p>
+<ul>
+<li>按字节数分类：单字节指令（49条）、双字节指令（46条）和三字节指令（16条）</li>
+<li>按指令的执行时间分类：单机器周期指令（64条）、双机器周期指令（24条）和四机器周期指令（2条）</li>
+<li>按其功能分类：数据传送指令（29条）、算数运算指令（24条）、逻辑运算指令（24条）、控制转移指令（17条）和位操作指令（17条）</li>
+</ul>
+<h3 id="数据传送指令">数据传送指令</h3>
+<p>数据传送指令的功能是进行数据传送，数据传送类指令<strong>一般</strong>不影响状态位。主要分为以下几类指令。</p>
+<h4 id="片内ram传送指令">片内RAM传送指令</h4>
+<p>片内RAM的数据传送是在单片机内部进行的，不需要通过外部总线交换数据，因此速度较快</p>
+<p><strong>指令操作码为：<code>MOV</code></strong></p>
+<ol type="1">
+<li>以累加器A为目的操作数的指令</li>
+</ol>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ASM">MOV A, Rn				; R0~R7<br>MOV A, direct			; 00H~FFH<br>MOV A, @Ri			; R0, R1<br>MOV A, #data<br></code></pre></td></tr></table></figure></p>
+<p>例题：<code>(R1)=40H, (30H)=12H, (40H)=34H</code></p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs asm">MOV A, R1				;(A)= 40H<br>MOV A, 30H			;(A)= 12H<br>MOV A @R1				;(A)= 34H<br>MOV A, #56H			;(A)= 56H<br></code></pre></td></tr></table></figure></p>
+<ol start="2" type="1">
+<li>以寄存器<code>Rn</code>为目的地址的指令</li>
+</ol>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs asm">MOV Rn, A<br>MOV Rn, direct<br>MOV Rn, #data<br></code></pre></td></tr></table></figure></p>
+<p>例题：<code>(A)=40H, (30H)=12H, (40H)=34H</code></p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ASM">MOV R1, A				;(R1)= 40H<br>MOV R1, 30H			;(R1)= 12H<br>MOV R1, #40H			;(R1)= 40H<br></code></pre></td></tr></table></figure></p>
+<ol start="3" type="1">
+<li>以直接地址为目的的指令</li>
+</ol>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs asm">MOV direct, A<br>MOV direct, Rn<br>MOV direct1, direct2<br>MOV direct, @Ri<br>MOV direct, #data<br></code></pre></td></tr></table></figure></p>
+<p>例题：<code>(R1)=40H, (30H)=12H, (40H)=34H, (A)=78H</code></p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs asm">MOV 50H, A			;(50H)= 78H<br>MOV 50H, R1			;(50H)= 40H<br>MOV 50H, 30H			;(50H)= 12H<br>MOV 50H, @R1			;(50H)= 34H<br>MOV 50H, #56H			;(50H)= 56H<br></code></pre></td></tr></table></figure></p>
+<ol start="4" type="1">
+<li>以寄存器间接地址为目的地址的指令</li>
+</ol>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs asm">MOV @Ri, A<br>MOV @Ri, direct<br>MOV @Ri, #data<br></code></pre></td></tr></table></figure></p>
+<p>例：<code>(R0)=40H, (30H)=12H, (A)=78H</code></p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ASM">MOV @R0, A			;(40H)= 78H<br>MOV @R0, 30H			;(40H)= 12H<br>MOV @R0, #56H			;(40H)= 56H<br></code></pre></td></tr></table></figure></p>
+<ol start="5" type="1">
+<li>以<code>DPTR</code>为目的地址的<strong>16位数据传送指令</strong></li>
+</ol>
+<p>指令功能是把一个16位立即数送入<code>DPTR</code>寄存器，其中高八位送入<code>DPH</code>，低八位送进<code>DPL</code></p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ASM">MOV DPTR, #data16<br></code></pre></td></tr></table></figure></p>
+<p>下面两种赋值语句功能一样：</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs asm">MOV DPTR, #1234H<br></code></pre></td></tr></table></figure></p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ASM">MOV DPH, #12H<br>MOV DPL, #34H<br></code></pre></td></tr></table></figure></p>
+<h4 id="片外ram传送指令">片外RAM传送指令</h4>
+<p>片外RAM传送指令实际是<strong>片外RAM与累加器A之间</strong>的传送指令。<strong>片外RAM单元只能采用<a
+href="#寄存器间接寻址">寄存器间接寻址</a></strong>的方式来访问，<code>R0</code>,<code>R1</code>,<code>DPTR</code>可用作间接寻址的寄存器</p>
+<p>指令操作码为<code>MOVX</code></p>
+<ol type="1">
+<li><p>以<code>DPTR</code>间接寻址的指令</p>
+<p>片外RAM单元的地址存于<code>DPTR</code>中，下列两条指令，第一条指令是读片外RAM单元中的内容复制到A中；第二条指令是把A中的内容吸入片外RAM单元中</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ASM">MOVX A, @DPTR<br>MOVX @DPTR, A<br></code></pre></td></tr></table></figure></p>
+<p>例：将外部RAM<code>1000H</code>单元中的内容送到外部RAM<code>2000H</code>单元，已知<code>(1000H)=12H, (2000H)=34H</code></p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ASM">MOV DPTR, #1000H<br>MOVX A, @DPTR<br>MOV DPTR, #2000H<br>MOVX @DPTR, A<br></code></pre></td></tr></table></figure></p></li>
+<li><p>以<code>R0</code>或<code>R1</code>间接寻址的指令</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ASM">MOVX A, @Ri<br>MOVX @Ri, A<br></code></pre></td></tr></table></figure></p>
+<hr />
+<p><code>Ri</code>是8位地址指针，可寻址256B（<code>00H~FFH</code>）的外部RAM，要想寻址64KB范围，<strong>可使P2口输出外部RAM的高八位地址</strong>（页地址，共256页
+<code>00H~FFH</code>），使<code>Ri</code>提供低八位地址（页内寻址，256B/页）</p>
+<hr />
+<p>例：将外部RAM
+<code>2050H</code>单元的内容写入累加器<code>A</code>中</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ASM">MOV P2, #20H<br>MOV R1, #50H<br>MOVX A, @R1<br></code></pre></td></tr></table></figure></p></li>
+</ol>
+<h4 id="rom-数据传送指令">ROM 数据传送指令</h4>
+<pre><code>程序存储器中除了存放程序之外，还会放置一些常数，如表格数据等，这组指令用于再程序存储器中查询表格常数，*并将它送入累加器`A`*，也称它为查表指令，数据传送是单向的。指令操作码为：`MOVC`</code></pre>
+<ul>
+<li>单字节指令</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs asm">MOVC A, @A+PC					;PC←(PC)+1, A←((A)+(PC))<br>MOVC A, @A+DPTR					;A←((A)+(DPTR))<br></code></pre></td></tr></table></figure>
+<hr />
+<p>:book:</p>
+<ul>
+<li>第一条指令将当前指令的<code>PC</code>作为基址寄存器，<code>A</code>作为变址寄存器
+<ul>
+<li><strong>寻址范围</strong>是当前指令下<code>256B</code>范围之内</li>
+</ul></li>
+<li>第二条指令是以<code>DPTR</code>为基址寄存器，<code>A</code>为变址寄存器
+<ul>
+<li><strong>寻址范围</strong>是<code>64KB</code></li>
+</ul></li>
+<li>基址寄存器内容与变址寄存器内容相加形成16位地址</li>
+<li><strong>在进行以上两条指令操作时 <span
+class="math inline">\(\overline{PSEN}=0\)</span></strong></li>
+</ul>
+<hr />
+<p>例：将ROM
+<code>1020H</code>单元内容送入内部RAM<code>70H</code>单元</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs asm">MOV A, #20H<br>MOV DPTR, #1000H<br>MOVC A, @A+DPTR<br>MOV 70H, A<br></code></pre></td></tr></table></figure>
+<h4 id="数据交换指令">数据交换指令</h4>
+<p>数据交换包括<strong>全字节交换、半字节交换、高低四位互换</strong>三类指令</p>
+<ol type="1">
+<li><p>全字节交换指令</p>
+<p>指令功能是将<code>A</code>的内容与源操作数相互交换</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs asm">XCH A, direct				;(A)↔(direct)<br>XCH A, Rn<br>XCH A, @Ri<br></code></pre></td></tr></table></figure></p></li>
+<li><p>半字节交换指令</p>
+<p>指令功能是将累加器<code>A</code>的低四位与<code>Ri</code>间接寻址单元内容的<strong>低四位相互交换</strong></p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs asm">XCHD A, @Ri<br></code></pre></td></tr></table></figure></p></li>
+<li><p>高低四位互换指令</p>
+<p>指令功能是将<code>A</code>中的高低四位互换</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs asm">SWAP A<br></code></pre></td></tr></table></figure></p></li>
+</ol>
+<p>例：已知<code>(A)=20H, (R1)=30H, (20H)=12H, (30H)=54H</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ASM">XCH A, R1					;(A)=30H, (R1)=20H<br>XCH A, 30H					;(A)=54H, (30H)=30H<br>XCH A, @R1					;(A)=12H, (20H)=54H<br>XCHD A, @R1					;(A)=14H, (20H)=52H<br>SWAP A						;(A)=41H<br></code></pre></td></tr></table></figure>
+<p>执行结果：<code>(A)=41H, (R1)=20H, (20H)=52H, (30H)=30H</code></p>
+<h4 id="堆栈操作类指令">堆栈操作类指令</h4>
+<p>片内RAM区，可设置一个“先进后出”或“后进先出”的堆栈区，用于<strong>保护和恢复CPU的工作现场</strong>，<strong>也可实现内部RAM单元之间的数据传送和交换</strong>。堆栈指针<code>SP</code>始终指向栈顶位置。<a
+href="">初始化时可对<code>SP</code>进行设定</a>，一般为内部RAM的<code>30H~7FH</code>范围。</p>
+<ol type="1">
+<li><p>进栈指令</p>
+<p>先将堆栈指针<code>SP</code>的内容加1（指针上移一个单元），然后将直接寻址单元的内容送到<code>SP</code>指针所指的堆栈单元中（栈顶）</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs asm">PUSH direct<br></code></pre></td></tr></table></figure></p>
+<p>例：设<code>(SP)=30H, (DPTR)=0123H</code>分析指令执行结果。</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs asm">PUSH DPL				;(31H)=23H<br>PUSH DPH				;(32H)=01H, (SP)=32H<br></code></pre></td></tr></table></figure></p></li>
+<li><p>出栈指针</p>
+<p>先将堆栈指针<code>SP</code>所指的单元（栈顶）内容弹出，并送入到
+<code>direct</code>
+单元中，然后<code>SP</code>的内容减1（指针下移一个单元）</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ASM">POP direct<br></code></pre></td></tr></table></figure></p>
+<p>例：</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs asm">POP DPH<br>POP DPL<br></code></pre></td></tr></table></figure></p></li>
+</ol>
+<h3 id="算术运算指令">算术运算指令</h3>
+<p>指令功能是进行数据的加、减、乘、除算术运算。算术运算指令一般会影响<a
+href="#程序状态字（PSW，Program%20State%20Word）">PSW</a>，有如下几类指令</p>
+<h4 id="加法指令">加法指令</h4>
+<ol type="1">
+<li><p>不带进位加法指令</p>
+<p>将<code>源操作数</code>和<code>A</code>中的操作数相加，结果放在<code>A</code>中，并影响各标志位：<code>Cy</code>、<code>Ac</code>、<code>OV</code>和<code>P</code></p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ASM">ADD A, Rn<br>ADD A, direct<br>ADD A, @Ri<br>ADD A, #data<br></code></pre></td></tr></table></figure></p>
+<p><code>ADD</code> 指令对<a
+href="#程序状态字（PSW，Program%20State%20Word）">PSW标志位</a>的影响如下：</p>
+<ul>
+<li>若D3向D4进位，则Ac=1，反之为0</li>
+<li>若D7进位，则Cy=1，反之为0</li>
+<li>D6向D7进位情况会影响OV标志，OV=C6⊕C7，其中C6为D6向D7的进位，C7为D7向D8的进位，即Cy</li>
+<li>A中1的个数影响P</li>
+</ul></li>
+</ol>
+<h1 id="中断系统">中断系统</h1>
+
+      </div>
+    </div>
+    
+      <script src='https://unpkg.com/mermaid@latest/dist/mermaid.min.js'></script>
+      <script>
+        if (window.mermaid) {
+          mermaid.initialize({
+                startOnLoad: true,
+                theme: 'base',
+                themeVariables: {
+                primaryColor: '#f7f7f7',
+                primaryTextColor: '#333',
+                primaryBorderColor: '#ccc',
+                lineColor: '#666', 
+                secondaryColor: '#eee',
+                tertiaryColor: '#f0f0f0',
+                tertiaryBorderColor: '#ccc',
+                tertiaryTextColor: '#333',
+                mainBkg: '#fafafa',
+                clusterBkg: '#f0f0f0'
+                }
+        });
+      </script>
+    
+  </article>
+  <div class="post__foot">
+    <div class="post-info">
+      
+      </div>
+    
+    <div class="post-nav">
+  
+    <div class="post-nav-item-left"></div>
+  
+  <div class="vhr"></div>
+  
+    <a class="post-nav-item-right" href="/archives/16107/">
+      <div class="text-align">
+        <span class="text-small">下一篇</span>
+        <svg t="1670570876164"
+             class="icon"
+             viewBox="0 0 1024 1024"
+             transform="scale(-1,-1)"
+             width="16"
+             height="16">
+          <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596" />
+        </svg>
+      </div>
+      Hello World
+    </a>
+  
+</div>
+
+    
+    
+  </div>
+
+    </div>
+    <div class="foot">
+      <div class="foot-inner">
+        <div class="foot__head">
+          
+            <div class="foot-line">
+              <div class="matts">片</div><div class="matts">云</div><div class="matts">天</div><div class="matts">共</div><div class="matts">远</div>
+            </div>
+          
+            <div class="foot-line">
+              <div class="matts">永</div><div class="matts">夜</div><div class="matts">月</div><div class="matts">同</div><div class="matts">孤</div>
+            </div>
+          
+        </div>
+        <div class="foot__body">
+          
+            <div class="foot-item">
+              <div class="foot-item__head">朋友</div>
+              <div class="foot-item__body">
+                
+                  <div class="text">
+                    <img alt="link" height="20px" width="20px" src="/images/icon/icon-link.svg" />
+                    <a class="foot-link" target="_blank" rel="noopener" href="https://github.com/hooozen/hexo-theme-tranquility">Theme Tranquility</a>
+                  </div>
+                
+                <div class="text">
+                  <img alt="link" height="20px" width="20px" src="/images/icon/icon-link+.svg" />
+                  <a class="foot-link"
+                     href="mailto:wzf050401@outlook.com?subject=%E7%94%B3%E8%AF%B7%20Pixel%20Blog%20%E7%9A%84%E5%8F%8B%E9%93%BE%E4%BD%8D%E7%BD%AE">
+                  申请友链</a>
+                </div>
+              </div>
+            </div>
+          
+          
+            <div class="foot-item">
+              <div class="foot-item__head">账号</div>
+              <div class="foot-item__body">
+                
+                  <div class="text">
+                    <img alt="link" height="20px" width="20px" src="/images/logo-steam.svg" />
+                    <a class="foot-link" target="_blank" rel="noopener" href="https://steamcommunity.com/id/BD6KFZ/">Steam</a>
+                  </div>
+                
+              </div>
+            </div>
+          
+          <div class="foot-item">
+            <div class="foot-item__head">联系</div>
+            <div class="foot-item__body">
+              <div class="text">
+                <img alt="link" height="20px" width="20px" src="/images/icon/icon-email.svg" />
+                <a class="foot-link" href="mailto:wzf050401@outlook.com">wzf050401@outlook.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <a href="https://RemerMagors.github.io">Pixel's Blog</a> &nbsp;|&nbsp;由&nbsp;<a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>&nbsp;及&nbsp;
+          <svg width="20" height="20" viewBox="0 0 725 725">
+            <path fill-rule="evenodd" fill="rgb(221, 221, 221)" d="M145.870,236.632 L396.955,103.578 L431.292,419.44 L156.600,522.53 L145.870,236.632 Z" />
+            <path fill-rule="evenodd" fill="rgb(159, 159, 159)" d="M396.955,103.578 L564.345,234.486 L611.558,513.469 L431.292,419.44 L396.955,103.578 Z" />
+            <path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M431.292,419.44 L611.558,513.469 L358.327,595.18 L156.600,522.53 L431.292,419.44 Z" />
+          </svg>
+          <a target="_blank" rel="noopener" href="https://github.com/hooozen/hexo-theme-tranquility">致远</a>&nbsp;驱动
+        </div>
+      </div>
+    </div>
+    
+      <script src="https://unpkg.com/js-polyfills@0.1.43/es6.js"></script>
+      <script id="MathJax-script"
+              async
+              src="https://www.unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
+    
+    
+      <script src="/js/search.js"></script>
+      <script>searchInitialize("/search.json")</script>
+    
+    
+      <script src="/js/copy-code.js"></script>
+    
+    
+  
+
+  </body>
+</html>
